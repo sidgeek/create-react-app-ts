@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Description from "./Description";
 import Header from "./Header";
 import logo from "./logo.svg";
-import Home from './pages/Home'
-import About from './pages/About'
+import Home from "./pages/Home";
+import About from "./pages/About";
 import "./App.css";
 
 const App: React.FC = () => {
@@ -18,6 +18,8 @@ const App: React.FC = () => {
         <Description countBy={3} />
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
+        {/* <Route exact path="/" render={Home} />
+        <Route exact path="/about" render={() => <About />} /> */}
       </div>
     </Router>
   );
