@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import NewTicket from "./pages/newTicket";
+import { TestContext } from "./contexts/global";
 import "./App.css";
 
 const Header: React.FC = () => (
@@ -18,7 +19,7 @@ const Header: React.FC = () => (
   </div>
 );
 
-const App: React.FC = () => {
+const SelfRouter: React.FC = () => {
   return (
     <Router>
       <div className="App">
@@ -30,6 +31,14 @@ const App: React.FC = () => {
         <Route exact path="/about" render={() => <About />} /> */}
       </div>
     </Router>
+  );
+};
+
+const App: React.FC = () => {
+  return (
+    <TestContext.Provider value={1}>
+      <SelfRouter />
+    </TestContext.Provider>
   );
 };
 
