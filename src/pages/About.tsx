@@ -4,7 +4,7 @@ import { useIsUnMounted } from "../debug/isUnMounted";
 import { TestContext } from "../contexts/global";
 
 export default function About() {
-  const number = useContext(TestContext);
+  const testObj = useContext(TestContext);
   const isUnmounted = useIsUnMounted();
   setTimeout(() => {
     console.log("dg>> About isUnmounted", isUnmounted.current);
@@ -12,7 +12,7 @@ export default function About() {
 
   return (
     <div>
-      <h2>About {number}</h2>
+      <h2>About {testObj.number}</h2>
     </div>
   );
 }

@@ -36,7 +36,7 @@ const SelfRouter: React.FC = () => {
 
 const App: React.FC = () => {
   return (
-    <TestContext.Provider value={1}>
+    <TestContext.Provider value={{ number: 1 }}>
       <SelfRouter />
     </TestContext.Provider>
   );
