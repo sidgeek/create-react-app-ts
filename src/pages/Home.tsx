@@ -4,7 +4,7 @@ import ButtonWithLogger from "../components/myButtons/ButtonWithLogger";
 import ButtonWithLoading from "../components/myButtons/ButtonWithLoading";
 import ButtonWithData from "../components/myButtons/ButtonWithData";
 import ButtonWithIcon from "../components/myButtons/ButtonWithIcon";
-import ButtonWIthColorPick from "../components/myButtons/ButtonWIthColorPick";
+import ButtonWithColorPick from "../components/myButtons/ButtonWithColorPick";
 
 export default function Home() {
   const onButton1Click = () => {
@@ -15,6 +15,10 @@ export default function Home() {
     console.log("dg>> onButton2Click");
   };
 
+  const onButton3Click = (color: string) => {
+    console.log("dg>> onButton2Click", color);
+  };
+
   return (
     <div>
       <h2>Home</h2>
@@ -23,7 +27,10 @@ export default function Home() {
       {/* <ButtonWithLogger /> */}
       <ButtonWithLoading loading={false} onClick={onButton1Click} />
       <ButtonWithIcon iconChoose={false} onClick={onButton2Click} />
-      <ButtonWIthColorPick />
+      <ButtonWithColorPick
+        fontColor={"#0073a0"}
+        onFontColorChanged={onButton3Click}
+      />
       {/* <ButtonWithData /> */}
     </div>
   );
