@@ -10,7 +10,6 @@ const withIcon = <P extends object>(
   SvgIcon1: React.ComponentType<SvgIconProps>,
   SvgIcon2: React.ComponentType<SvgIconProps>
 ): React.FC<P & WithIconChoose> => ({ iconChoose, ...props }) => {
-  console.log("dg>> iconChoose", iconChoose);
   return (
     <Component {...props as P}>
       {iconChoose ? <SvgIcon1 /> : <SvgIcon2 />}
