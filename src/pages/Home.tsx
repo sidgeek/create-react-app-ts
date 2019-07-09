@@ -4,6 +4,7 @@ import ButtonWithLogger from "../components/myButtons/ButtonWithLogger";
 import ButtonWithLoading from "../components/myButtons/ButtonWithLoading";
 import ButtonWithData from "../components/myButtons/ButtonWithData";
 import ButtonWithIcon from "../components/myButtons/ButtonWithIcon";
+import ButtonWIthColorPick from "../components/myButtons/ButtonWIthColorPick";
 
 export default function Home() {
   const onButton1Click = () => {
@@ -22,6 +23,7 @@ export default function Home() {
       {/* <ButtonWithLogger /> */}
       <ButtonWithLoading loading={false} onClick={onButton1Click} />
       <ButtonWithIcon iconChoose={false} onClick={onButton2Click} />
+      <ButtonWIthColorPick />
       {/* <ButtonWithData /> */}
     </div>
   );
