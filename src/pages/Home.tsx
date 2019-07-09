@@ -6,14 +6,22 @@ import ButtonWithData from "../components/myButtons/ButtonWithData";
 import ButtonWithIcon from "../components/myButtons/ButtonWithIcon";
 
 export default function Home() {
+  const onButton1Click = () => {
+    console.log("dg>> onButton1Click");
+  };
+
+  const onButton2Click = () => {
+    console.log("dg>> onButton2Click");
+  };
+
   return (
     <div>
       <h2>Home</h2>
       {/* <MyButton /> */}
       {/* <MyButton isloading={true} /> */}
       {/* <ButtonWithLogger /> */}
-      {/* <ButtonWithLoading /> */}
-      <ButtonWithIcon />
+      <ButtonWithLoading loading={false} onClick={onButton1Click} />
+      <ButtonWithIcon iconChoose={false} onClick={onButton2Click} />
       {/* <ButtonWithData /> */}
     </div>
   );

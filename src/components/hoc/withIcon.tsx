@@ -1,16 +1,19 @@
 import React from "react";
 import { SvgIconProps } from "@material-ui/core/SvgIcon";
 
+interface WithIconChoose {
+  iconChoose: boolean;
+}
+
 const withIcon = <P extends object>(
   Component: React.ComponentType<P>,
-  SvgIcon: React.ComponentType<SvgIconProps>
-): React.FC<P> => ({ ...props }) => {
-  console.log("dg>> props:", props);
-  console.log("dg>> SvgIcon:", SvgIcon);
-  console.log("dg>> Component:", Component);
+  SvgIcon1: React.ComponentType<SvgIconProps>,
+  SvgIcon2: React.ComponentType<SvgIconProps>
+): React.FC<P & WithIconChoose> => ({ iconChoose, ...props }) => {
+  console.log("dg>> iconChoose", iconChoose);
   return (
     <Component {...props as P}>
-      <SvgIcon />
+      {iconChoose ? <SvgIcon1 /> : <SvgIcon2 />}
     </Component>
   );
 };
